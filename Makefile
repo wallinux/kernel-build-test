@@ -48,10 +48,17 @@ MKDIR	:= $(Q)mkdir -p
 RM	:= $(Q)rm -f
 MAKE	:= $(Q)make -s
 TIME	?= $(Q)/usr/bin/time -v
-TIMESTAMP ?= ts
 
 help:
-	$(ECHO) "all		- Build everything"
+	$(ECHO) "all - Build and measure"
+	$(ECHO) ""
+	$(ECHO) "Host:         $(HOSTNAME)"
+	$(ECHO) "User:         $(USER)"
+	$(ECHO) "Date:         $(shell date)"
+	$(ECHO) "SRC location: $(SRC_BASE)"
+	$(ECHO) "OUT location: $(OUT_BASE)"
+	$(ECHO) "No of builds: $(PBUILDS)"
+	$(ECHO) "No of jobs:   $(PJOBS)"
 
 .PHONY: help
 .FORCE:
@@ -61,12 +68,13 @@ $(DL_DIR):
 
 dl: $(DL_DIR)/$(KERNEL_VER) 
 $(DL_DIR)/$(KERNEL_VER): $(DL_DIR)
-	$(Q)cd $(DL_DIR); wget --no-use-server-timestamps -c $(KERNEL_DL)/$(KERNEL_VER)
+	$(Q)cd $(DL_DIR); wget -c $(KERNEL_DL)/$(KERNEL_VER)
+	$(Q)touch $(KERNEL_DL)/$(KERNEL_VER)
 
 prepare: $(SRC_DIRS)
 $(SRC_DIRS): $(DL_DIR)/$(KERNEL_VER)
 	$(MKDIR) $@
-	$(Q)tar -C $@ --strip-components=1 -xf $(DL_DIR)/$(KERNEL_VER)
+	$(Q)tar -C $@ --strip-components=1 -xf $<
 
 build: $(OUT_DIRS)
 $(OUT_DIRS): $(SRC_DIRS)
@@ -83,9 +91,9 @@ all: $(SRC_DIRS)
 	$(ECHO) "OUT location: $(OUT_BASE)"
 	$(ECHO) "No of builds: $(PBUILDS)"
 	$(ECHO) "No of jobs:   $(PJOBS)"
-	$(ECHO) Start build $@ | $(TIMESTAMP)
+	$(ECHO) Start build $@
 	$(TIME) make -s -j build
-	$(ECHO) End build $@ | $(TIMESTAMP)
+	$(ECHO) End build $@
 
 prepare.clean:
 	$(ECHO) $@
