@@ -1,0 +1,18 @@
+echo -e "\n\n ----- preparing -----"
+make -s prepare
+make -s prepare SRC_BASE=$HOME/tmp/src
+
+echo -e "\n\n ----- harddrive read and write -----"
+make build.clean  > /dev/null
+sync
+make all 2>&1 | tee awa.rot-r.rot-w 
+
+echo -e "\n\n ----- harddrive read and ssd write -----"
+make build.clean OUT_BASE=$HOME/tmp/out > /dev/null
+sync
+make all OUT_BASE=$HOME/tmp/out  2>&1 | tee awa.rot-r.ssd-w 
+
+echo -e "\n\n ----- ssd read and ssd write -----"
+make build.clean OUT_BASE=$HOME/tmp/out > /dev/null
+sync
+make all SRC_BASE=$HOME/tmp/src OUT_BASE=$HOME/tmp/out  2>&1 | tee awa.ssd-r.ssd-w 

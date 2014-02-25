@@ -1,0 +1,32 @@
+Host:         arn-awallin-mint-l3
+User:         awallin
+Date:         tis 25 feb 2014 11:01:44 CET
+SRC location: /sdb1/home/awallin/src/build_test/src
+OUT location: /sdb1/home/awallin/src/build_test/out
+No of builds: 2
+No of jobs:   8
+feb 25 11:01:44 Start build all
+	Command being timed: "make -s -j build"
+	User time (seconds): 2047.62
+	System time (seconds): 146.84
+	Percent of CPU this job got: 726%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:01.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 128624
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 60361524
+	Voluntary context switches: 185130
+	Involuntary context switches: 446280
+	Swaps: 0
+	File system inputs: 8872
+	File system outputs: 1572376
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+feb 25 11:06:46 End build all
