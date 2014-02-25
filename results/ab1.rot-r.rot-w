@@ -1,0 +1,48 @@
+Host:         arn-build1
+User:         awallin
+Date:         tis 25 feb 2014 11.46.32 CET
+SRC location: /opt/awallin/build_test/src
+OUT location: /opt/awallin/build_test/out
+No of builds: 2
+No of jobs:   24
+feb 25 11:46:32 Start build all
+/opt/awallin/build_test/src/2/kernel/futex.c: In function ‘futex_lock_pi_atomic’:
+/opt/awallin/build_test/src/2/kernel/futex.c:725: warning: ‘curval’ may be used uninitialized in this function
+/opt/awallin/build_test/src/2/net/unix/af_unix.c: In function ‘unix_bind’:
+/opt/awallin/build_test/src/2/net/unix/af_unix.c:901: warning: ‘path.dentry’ may be used uninitialized in this function
+/opt/awallin/build_test/src/2/net/unix/af_unix.c:901: warning: ‘path.mnt’ may be used uninitialized in this function
+/opt/awallin/build_test/src/2/kernel/kprobes.c: In function ‘register_kprobe’:
+/opt/awallin/build_test/src/2/kernel/kprobes.c:1476: warning: ‘probed_mod’ may be used uninitialized in this function
+/opt/awallin/build_test/src/2/net/wireless/nl80211.c: In function ‘__cfg80211_wdev_from_attrs’:
+/opt/awallin/build_test/src/2/net/wireless/nl80211.c:77: warning: ‘wdev_id’ may be used uninitialized in this function
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_debugfs.c: In function ‘display_crc_ctl_write’:
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_debugfs.c:2350: warning: ‘val’ may be used uninitialized in this function
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_debugfs.c:2350: note: ‘val’ was declared here
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_gem_gtt.c: In function ‘gen8_ggtt_insert_entries’:
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_gem_gtt.c:888: warning: ‘addr’ may be used uninitialized in this function
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_gem_gtt.c: In function ‘gen6_ggtt_insert_entries’:
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_gem_gtt.c:933: warning: ‘addr’ may be used uninitialized in this function
+	Command being timed: "make -s -j build"
+	User time (seconds): 1156.94
+	System time (seconds): 127.77
+	Percent of CPU this job got: 2127%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:00.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 608416
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 163
+	Minor (reclaiming a frame) page faults: 31484772
+	Voluntary context switches: 101552
+	Involuntary context switches: 67533
+	Swaps: 0
+	File system inputs: 35752
+	File system outputs: 755456
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+feb 25 11:47:33 End build all
