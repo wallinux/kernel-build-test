@@ -1,0 +1,38 @@
+Host:         arn-build2
+User:         awallin
+Date:         tis 25 feb+ 2014 11.49.+03 CET
+SRC location: /opt/awallin/build_test/src
+OUT location: /opt/awallin/build_test/out
+No of builds: 2
+No of jobs:   32
+feb 25 11:49:03 Start build all
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_debugfs.c: In function ‘display_crc_ctl_write’:
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_debugfs.c:2393:2: warning: ‘val’ may be used uninitialized in this function [-Wuninitialized]
+/opt/awallin/build_test/src/2/drivers/gpu/drm/i915/i915_debugfs.c:2350:6: note: ‘val’ was declared here
+/opt/awallin/build_test/src/1/drivers/gpu/drm/i915/i915_debugfs.c: In function ‘display_crc_ctl_write’:
+/opt/awallin/build_test/src/1/drivers/gpu/drm/i915/i915_debugfs.c:2393:2: warning: ‘val’ may be used uninitialized in this function [-Wuninitialized]
+/opt/awallin/build_test/src/1/drivers/gpu/drm/i915/i915_debugfs.c:2350:6: note: ‘val’ was declared here
+	Command being timed: "make -s -j build"
+	User time (seconds): 1650.51
+	System time (seconds): 147.52
+	Percent of CPU this job got: 2500%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:11.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 510752
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 78
+	Minor (reclaiming a frame) page faults: 57306939
+	Voluntary context switches: 221430
+	Involuntary context switches: 250149
+	Swaps: 0
+	File system inputs: 7248
+	File system outputs: 1518008
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+feb 25 11:50:15 End build all

@@ -1,0 +1,38 @@
+Host:         arn-build2
+User:         awallin
+Date:         tis  6 maj+ 2014 10.54.+57 CEST
+SRC location: /ssd/awallin/kernel-build-test/src
+OUT location: /ssd/awallin/kernel-build-test/out
+No of builds: 2
+No of jobs:   32
+maj 06 10:54:57 Start build all
+/ssd/awallin/kernel-build-test/src/2/drivers/gpu/drm/i915/i915_debugfs.c: In function ‘display_crc_ctl_write’:
+/ssd/awallin/kernel-build-test/src/2/drivers/gpu/drm/i915/i915_debugfs.c:2393:2: warning: ‘val’ may be used uninitialized in this function [-Wuninitialized]
+/ssd/awallin/kernel-build-test/src/2/drivers/gpu/drm/i915/i915_debugfs.c:2350:6: note: ‘val’ was declared here
+/ssd/awallin/kernel-build-test/src/1/drivers/gpu/drm/i915/i915_debugfs.c: In function ‘display_crc_ctl_write’:
+/ssd/awallin/kernel-build-test/src/1/drivers/gpu/drm/i915/i915_debugfs.c:2393:2: warning: ‘val’ may be used uninitialized in this function [-Wuninitialized]
+/ssd/awallin/kernel-build-test/src/1/drivers/gpu/drm/i915/i915_debugfs.c:2350:6: note: ‘val’ was declared here
+	Command being timed: "make -s -j build"
+	User time (seconds): 1651.62
+	System time (seconds): 141.82
+	Percent of CPU this job got: 2505%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:11.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 511152
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 199
+	Minor (reclaiming a frame) page faults: 57334629
+	Voluntary context switches: 225644
+	Involuntary context switches: 332083
+	Swaps: 0
+	File system inputs: 32712
+	File system outputs: 1560904
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+maj 06 10:56:09 End build all
