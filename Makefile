@@ -15,9 +15,11 @@ DOMAIN		?= $(shell dnsdomainname)
 
 TOP	:= $(shell pwd)
 
-
 KERNEL_VER 	?= linux-4.1.6.tar.xz
 KERNEL_DL	?= https://www.kernel.org/pub/linux/kernel/v4.x
+KERNEL		= git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+KERNEL_STABLE	= git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+KERNEL_TAG	?= v4.1.6
 #KERNEL_CONFIG	?= allyesconfig
 KERNEL_CONFIG	?= x86_64_defconfig
 KERNEL_TARGET	?= bzImage
@@ -65,6 +67,24 @@ help:
 
 $(DL_DIR):
 	$(MKDIR) $@
+
+repo: repo.update
+
+repo.checkout: $(DL_DIR)/linux
+	$(Q)cd $<; git checkout -b branch_$(KERNEL_TAG) $(KERNEL_TAG)
+
+repo.update: $(DL_DIR)/linux
+	$(Q)cd $<; git fetch --all
+	$(MAKE) repo.checkout
+
+repo.stable: $(DL_DIR)/linux
+	$(Q)cd $<; git remote add stable $(KERNEL_STABLE)
+	$(MAKE) repo.update
+
+repo.clone: $(DL_DIR)/linux
+$(DL_DIR)/linux:
+	$(Q)git clone $(KERNEL) $@
+	$(MAKE) repo.stable
 
 dl: $(DL_DIR)/$(KERNEL_VER) 
 $(DL_DIR)/$(KERNEL_VER): $(DL_DIR)
