@@ -16,8 +16,8 @@ DOMAIN		?= $(shell dnsdomainname)
 TOP	:= $(shell pwd)
 
 
-KERNEL_VER 	?= linux-3.13.5.tar.xz
-KERNEL_DL	?= https://www.kernel.org/pub/linux/kernel/v3.x
+KERNEL_VER 	?= linux-4.1.6.tar.xz
+KERNEL_DL	?= https://www.kernel.org/pub/linux/kernel/v4.x
 #KERNEL_CONFIG	?= allyesconfig
 KERNEL_CONFIG	?= x86_64_defconfig
 KERNEL_TARGET	?= bzImage
@@ -69,7 +69,7 @@ $(DL_DIR):
 dl: $(DL_DIR)/$(KERNEL_VER) 
 $(DL_DIR)/$(KERNEL_VER): $(DL_DIR)
 	$(Q)cd $(DL_DIR); wget -c $(KERNEL_DL)/$(KERNEL_VER)
-	$(Q)touch $(KERNEL_DL)/$(KERNEL_VER)
+	$(Q)touch $(DL_DIR)/$(KERNEL_VER)
 
 prepare: $(SRC_DIRS)
 $(SRC_DIRS): $(DL_DIR)/$(KERNEL_VER)
